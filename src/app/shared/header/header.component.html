@@ -1,13 +1,17 @@
-<mat-card>
-    <mat-card-title>
-        Test Header page
-    </mat-card-title>
-    <mat-card-content>
-        <button routerLink="/aboutus">goto aboutus</button>
-        <button routerLink="/footer">goto Footer</button>
-        <br>
-        <p>
-            Header Works!
-        </p>
-    </mat-card-content>
-</mat-card>
+<mat-toolbar>
+    <button mat-mini-fab color="primary">
+        <mat-icon>dashboard</mat-icon>
+    </button>
+    <span class="example-icon"></span>
+    <mat-icon>{{iconTitle}}</mat-icon>
+    <span class="example-icon"></span>
+    {{pageTitle}}
+    <span class="example-spacer"></span>
+    <mat-icon [matMenuTriggerFor]="helpMenu">help_outline</mat-icon>
+    <span class="example-spacer"></span>
+    <mat-icon>settings</mat-icon>
+
+    <mat-menu #helpMenu="matMenu">
+        {{helpTitle}}
+    </mat-menu>
+</mat-toolbar>
