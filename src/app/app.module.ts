@@ -13,6 +13,9 @@ import { AboutusComponent } from './shared/aboutus/aboutus.component';
 import { CustommaterialModule } from './custommaterial.module';
 import { SettingsComponent } from './settings/settings.component';
 import { MatMenuModule } from '@angular/material/menu';
+import { DomSanitizer } from '@angular/platform-browser';
+import { MatIconRegistry } from '@angular/material/icon';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -31,9 +34,22 @@ import { MatMenuModule } from '@angular/material/menu';
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
-    MatMenuModule
+    MatMenuModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer){
+    iconRegistry.addSvgIcon(
+      'fb',
+    sanitizer.bypassSecurityTrustResourceUrl('assets/icons/fb.svg'));
+    iconRegistry.addSvgIcon(
+      'linkedin',
+    sanitizer.bypassSecurityTrustResourceUrl('assets/icons/Linkedin.svg'));
+    iconRegistry.addSvgIcon(
+      'git',
+    sanitizer.bypassSecurityTrustResourceUrl('assets/icons/github.svg'));
+  }
+ }

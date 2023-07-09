@@ -1,5 +1,5 @@
 <mat-toolbar>
-    <button mat-mini-fab color="warn">
+    <button mat-mini-fab color="warn" [mat-menu-trigger-for]="navMenu">
         <mat-icon>dashboard</mat-icon>
     </button>
     <span class="example-icon"></span>
@@ -13,5 +13,13 @@
 
     <mat-menu #helpMenu="matMenu">
         {{helpTitle}}
+    </mat-menu>
+
+    <mat-menu #navMenu="matMenu">
+        <a href="" target="blank"><button mat-menu-item><mat-icon svgIcon="fb"></mat-icon></button></a>
+        <a href="" target="blank"><button mat-menu-item><mat-icon svgIcon="linkedin"></mat-icon></button></a>
+        <a href="" target="blank"><button mat-menu-item><mat-icon svgIcon="git"></mat-icon></button></a>
+        <button mat-menu-item routerLink="/aboutus"><mat-icon>info</mat-icon></button>
+        <button mat-menu-item routerLink="/settings"><mat-icon>settings</mat-icon></button>
     </mat-menu>
 </mat-toolbar>
