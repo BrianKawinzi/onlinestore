@@ -14,6 +14,8 @@ export class HeaderComponent implements OnInit{
 
   counter = 0;
 
+  userStatusColor = "warn";
+
 
   constructor(private _backendservice: BackendService) {}
 
@@ -28,6 +30,13 @@ export class HeaderComponent implements OnInit{
 
       }
       );
+
+      this._backendservice.getUserStatus().subscribe((res: boolean) => {
+        this.userStatusColor = res ? "primary" : "warn";
+      }, (error: any) => {
+        // Handle the error if necessary
+      });
+      
     
   }
     

@@ -20,7 +20,13 @@ export class BackendService {
 
     return of(cartTotal);
   }
-  
+
+  getUserStatus(): Observable<boolean>{
+    //logic to retrieve the user status
+    //return an Observable with the user status
+    const userStatus = true;
+    return of(userStatus);
+  }
 
 
   }
