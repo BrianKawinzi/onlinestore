@@ -1,4 +1,6 @@
+import { NumberInput } from '@angular/cdk/coercion';
 import { Component, OnInit, Input } from '@angular/core';
+import { BackendService } from 'src/app/services/backend.service';
 
 @Component({
   selector: 'app-header',
@@ -10,11 +12,25 @@ export class HeaderComponent implements OnInit{
   @Input() iconTitle: string = '';
   @Input() helpTitle: string = '';
 
+  counter = 0;
 
-  constructor() { }
 
-  ngOnInit() {
+  constructor(private _backendservice: BackendService) {}
+
+
+  ngOnInit() { 
+    this.counter = 0;
+    this._backendservice.getCartTotal().subscribe(
+      (res: NumberInput) => {
+        this.counter = Number(res);
+      },
+      (error: any) => {
+
+      }
+      );
+    
+  }
     
   }
 
-}
+
