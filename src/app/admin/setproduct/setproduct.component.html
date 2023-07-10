@@ -1,0 +1,33 @@
+<app-header pageTitle="SetProducts" iconTitle="settings" helpTitle="Aboutuspagehelp"></app-header>
+
+<mat-tab-group>
+  <mat-card>
+    <mat-card-content>
+      <div *ngIf="toggleField === 'searchMode'; else showModeTemplates">
+        <!-- Search page content here -->
+        <form #searchFormData="ngForm" class="example-form">
+          <mat-form-field class="example-form">
+            <!-- Your form controls and input elements -->
+          </mat-form-field>
+        </form>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <ng-template #showModeTemplates>
+    <!-- Add, edit, and results page content here -->
+    <ng-container *ngIf="toggleField === 'addMode'; else editModeTemplate">
+      <!-- Add page content here -->
+    </ng-container>
+
+    <ng-template #editModeTemplate>
+      <ng-container *ngIf="toggleField === 'editMode'; else resultsModeTemplate">
+        <!-- Edit page content here -->
+      </ng-container>
+    </ng-template>
+
+    <ng-template #resultsModeTemplate>
+      <!-- Results page content here -->
+    </ng-template>
+  </ng-template>
+</mat-tab-group>

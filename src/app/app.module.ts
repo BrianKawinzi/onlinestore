@@ -17,6 +17,10 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { MatIconRegistry } from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
 import { MatBadgeModule } from '@angular/material/badge';
+import { MatTabsModule } from '@angular/material/tabs';
+import { SetproductComponent } from './admin/setproduct/setproduct.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -24,7 +28,8 @@ import { MatBadgeModule } from '@angular/material/badge';
     HeaderComponent,
     FooterComponent,
     AboutusComponent,
-    SettingsComponent
+    SettingsComponent,
+    SetproductComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +42,11 @@ import { MatBadgeModule } from '@angular/material/badge';
     MatIconModule,
     MatMenuModule,
     HttpClientModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatTabsModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]
