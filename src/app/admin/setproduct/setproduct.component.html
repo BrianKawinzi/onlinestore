@@ -1,33 +1,48 @@
 <app-header pageTitle="SetProducts" iconTitle="settings" helpTitle="Aboutuspagehelp"></app-header>
+<mat-card>
+  <mat-card-content>
+    <div *ngIf="(toggleField=='searchMode') else (toggleField=='addMode')? showAddMode : ((toggleField=='editMode')? showEditMode : showResMode)">
+      <form #searchFormData="ngForm" class="example-form">
+        <mat-card-actions>
+          <button type="button" (click)="toggle('resMode');getFilterData(searchFormData.value);" mat-raised-button [disabled]="!searchFormData.valid" color="primary">Search</button>
+          <span class="example-spacer"></span>
+          <span matTooltip="Add New">
+            <mat-icon color="primary" (click)="toggle('addMode')">add</mat-icon>
+          </span>
+          <span class="example-icon"></span>
+          <span>
+            <mat-icon color="primary" (click)="toggle('resMode');getData();">cached</mat-icon>
+          </span>
+        </mat-card-actions>
+        <mat-form-field class="example-form">
+          <input matInput type="text" placeholder="Category" id="category" name="category" #category="ngModel" ngModel minlength="3" maxlength="50">
+        </mat-form-field>
+        <br>
+        <mat-form-field class="example-form">
+          <input matInput type="text" placeholder="Product Name" id="name" name="name" #name="ngModel" ngModel minlength="3" maxlength="50">
+        </mat-form-field>
+        <br>
+        <mat-form-field class="example-form">
+          <input matInput [matDatepicker]="pickerfrondt" placeholder="From Date" id="fromdt" name="fromdt" #frondt="ngModel" ngModel>
+          <mat-datepicker-toggle matSuffix [for]="pickerfrondt"></mat-datepicker-toggle>
+          <mat-datepicker #pickerfrondt></mat-datepicker>
+        </mat-form-field>
+        <br>
+        <mat-form-field class="example-form">
+          <input matInput [matDatepicker]="pickertodt" placeholder="To Date" id="todt" name="todt" #todt="ngModel" ngModel>
+          <mat-datepicker-toggle matSuffix [for]="pickertodt"></mat-datepicker-toggle>
+          <mat-datepicker #pickertodt></mat-datepicker>
+        </mat-form-field>
+      </form>
+    </div>
+  </mat-card-content>
+</mat-card>
+<ng-template #showAddMode>
 
-<mat-tab-group>
-  <mat-card>
-    <mat-card-content>
-      <div *ngIf="toggleField === 'searchMode'; else showModeTemplates">
-        <!-- Search page content here -->
-        <form #searchFormData="ngForm" class="example-form">
-          <mat-form-field class="example-form">
-            <!-- Your form controls and input elements -->
-          </mat-form-field>
-        </form>
-      </div>
-    </mat-card-content>
-  </mat-card>
+</ng-template>
+<ng-template #showEditMode>
 
-  <ng-template #showModeTemplates>
-    <!-- Add, edit, and results page content here -->
-    <ng-container *ngIf="toggleField === 'addMode'; else editModeTemplate">
-      <!-- Add page content here -->
-    </ng-container>
+</ng-template>
+<ng-template #showResMode>
 
-    <ng-template #editModeTemplate>
-      <ng-container *ngIf="toggleField === 'editMode'; else resultsModeTemplate">
-        <!-- Edit page content here -->
-      </ng-container>
-    </ng-template>
-
-    <ng-template #resultsModeTemplate>
-      <!-- Results page content here -->
-    </ng-template>
-  </ng-template>
-</mat-tab-group>
+</ng-template>

@@ -9,6 +9,17 @@ export class SetproductComponent implements OnInit{
 
   toggleField: string = '';
 
+  getFilterData(formData: any) {
+    // Your code logic here
+    // Process the filter data
+  }
+  
+  getData() {
+    // Your code logic here
+    // Perform the necessary data retrieval
+  }
+  
+
   constructor() { }
 
   ngOnInit() {
