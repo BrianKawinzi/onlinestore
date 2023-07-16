@@ -1,1 +1,21 @@
-<p>login works!</p>
+<div class="login-center">
+    <div class="login-container">
+        <h2>Login</h2>
+        <form (submit)="onSubmit()">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" [(ngModel)]="user.email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" [(ngModel)]="user.password" name="password" required>
+            </div>
+
+            <button type="submit">Login</button>
+        </form>
+
+        <!-- Option for users without an account -->
+        <p class="signup-option">Don't have an account? <a routerLink="/signup">Sign Up</a></p>
+    </div>
+</div>

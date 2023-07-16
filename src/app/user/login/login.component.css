@@ -1,0 +1,63 @@
+/* Styles for the login container */
+.login-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.login-container {
+    max-width: 400px;
+    border: 1px solid #ccc;
+    padding: 100px;
+  }
+  
+  .login-container h2 {
+    text-align: center;
+  }
+  
+  /* Styles for the form */
+  form {
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: 600px) {
+        width: 100%;
+    }
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  button[type="submit"] {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* Styles for the signup option */
+  .signup-option {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .signup-option a {
+    color: #4CAF50;
+    text-decoration: none;
+  }
+  
