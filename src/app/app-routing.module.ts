@@ -6,6 +6,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { SettingsComponent } from './settings/settings.component';
 import { SetproductComponent } from './admin/setproduct/setproduct.component';
 import { SignUpComponent } from './user/sign-up/sign-up.component';
+import { LoginComponent } from './user/login/login.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/aboutus', pathMatch:'full'},
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path: 'settings', component: SettingsComponent},
   {path: 'setproduct', component: SetproductComponent},
   {path: 'sign', component: SignUpComponent},
+  {path: 'login', component: LoginComponent},
   {path: '**', redirectTo: '/sign', pathMatch:'full'},
 ];
 
