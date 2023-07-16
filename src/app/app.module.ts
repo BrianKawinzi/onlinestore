@@ -26,7 +26,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-
+import { SignUpComponent } from './user/sign-up/sign-up.component';
+import { LoginComponent } from './user/login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +35,9 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     FooterComponent,
     AboutusComponent,
     SettingsComponent,
-    SetproductComponent
+    SetproductComponent,
+    SignUpComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
