@@ -10,7 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { AboutusComponent } from './shared/aboutus/aboutus.component';
-import { CustommaterialModule } from './custommaterial.module';
+
 import { SettingsComponent } from './settings/settings.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { DomSanitizer } from '@angular/platform-browser';
@@ -28,6 +28,9 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { SignUpComponent } from './user/sign-up/sign-up.component';
 import { LoginComponent } from './user/login/login.component';
+import { HomeComponent } from './pages/home/home.component';
+import { ProductCardComponent } from './product-card/product-card.component';
+import { CartComponent } from './pages/cart/cart.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,13 +40,16 @@ import { LoginComponent } from './user/login/login.component';
     SettingsComponent,
     SetproductComponent,
     SignUpComponent,
-    LoginComponent
+    LoginComponent,
+    HomeComponent,
+    ProductCardComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    CustommaterialModule,
+   
     MatCardModule,
     MatToolbarModule,
     MatButtonModule,

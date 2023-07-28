@@ -1,0 +1,11 @@
+<div class="card">
+    <img src="imageUrl" alt="Product Image">
+    <div class="info">
+        <h3>{{ title }}</h3>
+        <p>{{ description }}</p>
+        <p class="price">{{ price | currency }}</p>
+    </div>
+    <button (click)="toggleCartStatus()">
+        {{ isItemInCart ? 'Remove from Cart' : 'Add to Cart'}}
+    </button>
+</div>
