@@ -1,29 +1,22 @@
-<mat-toolbar>
-    <button mat-mini-fab color="warn" [mat-menu-trigger-for]="navMenu">
-        <mat-icon>dashboard</mat-icon>
-    </button>
+<nav class="navbar">
+    <mat-icon class="navbarLogo">dashboard</mat-icon>
     <span class="example-icon"></span>
-    <mat-icon>{{iconTitle}}</mat-icon>
-    <span class="example-icon"></span>
-    {{pageTitle}}
     <span class="example-spacer"></span>
-    <mat-icon [color]="userStatusColor" routerLink="/home">account_box</mat-icon>
-    <span class="example-icon"></span>
-    <mat-icon matBadge="{{counter}}" matBadgePosition="before" mat-BadgeColor="accent" routerLink="/cart">shopping_cart</mat-icon>
-    <span class="example-icon"></span>
-    <mat-icon [matMenuTriggerFor]="helpMenu">help_outline</mat-icon>
-    <span class="example-icon"></span>
-    <mat-icon>settings</mat-icon>
+    <ul class="navbarLinks">
+        <li><a routerLink="/">Home</a></li>
+        <span class="example-icon"></span>
+        <li><a routerLink="/shop">Shop</a></li>
+        <span class="example-icon"></span>
+        <li><a routerLink="/aboutus">About Us</a></li>
+        <span class="example-icon"></span>
+        <li><a routerLink="/contact">Contact Us</a></li>
+    </ul>
 
-    <mat-menu #helpMenu="matMenu">
-        {{helpTitle}}
-    </mat-menu>
+    <div class="navbarSearch">
 
-    <mat-menu #navMenu="matMenu">
-        <a href="" target="blank"><button mat-menu-item><mat-icon svgIcon="fb"></mat-icon></button></a>
-        <a href="" target="blank"><button mat-menu-item><mat-icon svgIcon="linkedin"></mat-icon></button></a>
-        <a href="" target="blank"><button mat-menu-item><mat-icon svgIcon="git"></mat-icon></button></a>
-        <button mat-menu-item routerLink="/aboutus"><mat-icon>info</mat-icon></button>
-        <button mat-menu-item routerLink="/setproduct"><mat-icon>settings</mat-icon></button>
-    </mat-menu>
-</mat-toolbar>
+    </div>
+
+    <div class="navbarIcons">
+        <a routerLink="/cart"><i class="fas fa-shopping-cart"></i></a>
+    </div>
+</nav>

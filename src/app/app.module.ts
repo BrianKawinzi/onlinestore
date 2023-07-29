@@ -10,7 +10,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { AboutusComponent } from './shared/aboutus/aboutus.component';
-
+import { MatTableModule } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { SettingsComponent } from './settings/settings.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { DomSanitizer } from '@angular/platform-browser';
@@ -20,6 +22,7 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { MatTabsModule } from '@angular/material/tabs';
 import { SetproductComponent } from './admin/setproduct/setproduct.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatStepperModule } from '@angular/material/stepper';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -31,6 +34,7 @@ import { LoginComponent } from './user/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { CartComponent } from './pages/cart/cart.component';
+import { AdminLoginComponent } from './admin/admin.login/admin.login.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,13 +47,14 @@ import { CartComponent } from './pages/cart/cart.component';
     LoginComponent,
     HomeComponent,
     ProductCardComponent,
-    CartComponent
+    CartComponent,
+    AdminLoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-   
+    MatStepperModule,
     MatCardModule,
     MatToolbarModule,
     MatButtonModule,
@@ -65,7 +70,10 @@ import { CartComponent } from './pages/cart/cart.component';
     MatDatepickerModule,
     MatNativeDateModule,
     MatTooltipModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

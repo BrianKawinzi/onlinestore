@@ -1,8 +1,66 @@
 <app-header pageTitle="About Us" iconTitle="info" helpTitle="Aboutuspagehelp"></app-header>
 <mat-tab-group>
-    <mat-tab label="Manage">Content 1</mat-tab>
-    <mat-tab label="Aboutus">Content 2</mat-tab>
-    <mat-tab label="FAQ">Content 3</mat-tab>
+    <mat-tab label="Aboutus">
+        <mat-card>
+            <mat-card-content>
+                <p class="middle-headline">An online web atrore
+                    <strong>This can be used for any web store</strong>
+                </p>
+            </mat-card-content>
+            <mat-card-content>
+                <div class="col-md-7">
+                    <p class="blueheading">
+                        <mat-icon>star</mat-icon>
+                        Widely Categorize knowledge base
+                    </p>
+                    <p style="text-align: justify;">A complete knowledge base which covers lots of field and opic and [rovide a cursory reading to whom who are lloking for something new</p>
+                    <p class="blueheading" style="text-align: justify;">
+                        <mat-icon>search</mat-icon>
+                        Search Providers Anywhere
+                    </p>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </mat-tab>
+    <mat-tab label="FAQ">
+        <mat-card>
+            <mat-card-title class="blueheading">How does this woK?</mat-card-title>
+            <mat-card-content>
+                <mat-horizontal-stepper #stepper="matHorizontalStepper">
+                    <mat-step>
+                        <ng-template matStepLabel></ng-template>
+                        <label class="middle-headline">Step 1: </label>Login with Google, Facebook or your email ID. Or simply create an account.
+                    </mat-step>
+                    <mat-step>
+                        <ng-template matStepLabel>
+                            <label class="middle-headline">Step 2: Pro Version Only: </label> create a new a unique Company name
+                            <mat-icon>business</mat-icon> and a secret key.
+                            <mat-icon>new</mat-icon> Pro
+                            <mat-icon>vpn</mat-icon>
+                        </ng-template>
+                    </mat-step>
+                    <mat-step>
+                        <p class="bodytext">
+                            <label class="middle-headline">Step 3:</label>share this orgname and key with your employees.
+                        </p>
+                        <span class="label-error">
+                            * share your
+                                orgname and Secret key with any person, and person will have access to all your data.
+                                <br>
+                                <br> ** Only you can change your secret key (simple browse to settings
+                                <mat-icon>account_box</mat-icon> page and write same orgname with a new key).
+                                <br>
+                                <br> *** Changing secret key will remove access to all your existing users who are using your
+                                orgname and secret key.
+                                <br>
+                                <br> **** If you change orgname, you will create a new org and will lose all data from last organization.
+                        
+                        </span>
+                    </mat-step>
+                </mat-horizontal-stepper>
+            </mat-card-content>
+        </mat-card>
+    </mat-tab>
     <mat-tab label="Pro">Content 4</mat-tab>
     <mat-tab label="Terms">Content 5</mat-tab>
 </mat-tab-group>
