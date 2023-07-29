@@ -35,6 +35,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { AdminLoginComponent } from './admin/admin.login/admin.login.component';
+import { SearchService } from './services/search.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -75,7 +76,7 @@ import { AdminLoginComponent } from './admin/admin.login/admin.login.component';
     MatSortModule,
     MatPaginatorModule
   ],
-  providers: [],
+  providers: [SearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

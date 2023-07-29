@@ -1,6 +1,6 @@
 import { NumberInput } from '@angular/cdk/coercion';
 import { Component, OnInit, Input } from '@angular/core';
-
+import { SearchService } from 'src/app/services/search.service';
 import { CartService } from 'src/app/services/cart.service';
 
 @Component({
@@ -12,6 +12,7 @@ export class HeaderComponent {
   @Input() pageTitle: string = '';
   @Input() iconTitle: string = '';
   @Input() helpTitle: string = '';
+  searchKeyword: string = '';
 
   counter = 0;
 
@@ -19,10 +20,11 @@ export class HeaderComponent {
 
 
 
-  constructor(private cartService: CartService) { }
+  constructor(private searchService: SearchService) { }
 
-  ngOnInit() {
-    this.counter = this.cartService.getCartItemCount();
+  performSearch() {
+    const results = this.searchService.searchProducts(this.searchKeyword);
+    console.log('Search results:', results);
   }
 
 

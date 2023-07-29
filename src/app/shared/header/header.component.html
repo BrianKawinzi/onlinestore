@@ -11,8 +11,9 @@
         <span class="example-icon"></span>
         <li><a routerLink="/contact">Contact Us</a></li>
     </ul>
-
+    <span class="example-icon"></span>
     <div class="navbarSearch">
+        <input type="text" [(ngModel)]="searchKeyword" (keyup)="performSearch()" placeholder="Search products...">
 
     </div>
 
